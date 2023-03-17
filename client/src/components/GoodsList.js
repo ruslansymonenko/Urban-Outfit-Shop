@@ -9,7 +9,7 @@ function GoodsList({goods}) {
           key={good.id}
           name={good.name}
           price={good.price}
-          img={good.img}
+          imgURL={good.imgURL}
         />
       )
     })
