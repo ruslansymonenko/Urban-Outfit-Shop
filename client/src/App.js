@@ -1,26 +1,39 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
-import { GoodsList } from './components/GoodsList';
+import React from 'react';
+import { Route, Routes } from 'react-router-dom';
 
-import styles from './App.module.scss';
+
+import { MainPage } from './pages/MainPage';
+import { AboutPage } from './pages/AboutPage';
+import { ContactPage } from './pages/ContactPage';
+import {NotFoundPage} from './pages/NotFoundPage';
+
+import { Layout } from './components/Layout';
 
 function App() {
-  const [goods, setGoods] = useState([]);
+  // const [goods, setGoods] = useState([]);
 
-  useEffect(() => {
-    axios.get('http://localhost:3001/api/goods')
-      .then(response => {
-        setGoods(response.data);
-      })
-      .catch(error => {
-        console.log(error);
-      });
-  }, []);
+  // useEffect(() => {
+  //   axios.get('http://localhost:3001/api/goods')
+  //     .then(response => {
+  //       console.log('Data received!');
+  //       setGoods(response.data);
+  //     })
+  //     .catch(error => {
+  //       console.log(error);
+  //     });
+  // }, []);
 
   return (
-    <div className={styles.parent}>
-      <h1 className={styles.title}>Hello this is online store</h1>
-      <GoodsList goods={goods}/>
+    <div className="app">
+      <Routes>
+        <Route path='/' element={<Layout/>}>
+          <Route index path='/' element={<MainPage/>}/>
+          <Route path='about' element={<AboutPage/>}/>
+          <Route path='contact' element={<ContactPage/>}/>
+          <Route path='*' element={<NotFoundPage/>}/>
+        </Route>
+      </Routes>
+
     </div>
   );
 }

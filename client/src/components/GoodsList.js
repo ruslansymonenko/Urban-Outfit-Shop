@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { GoodsItem } from './GoodsItem';
 
-function GoodsList({goods}) {
+const GoodsList = ({goods}) => {
   return(
     goods.map(good => {
       return(
