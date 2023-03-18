@@ -25,36 +25,39 @@ const Slider = () => {
     }
   }
 
-
-
   return (
     <div className="slider">
-      <div className="slider-container">
+      <div className="container">
         <div className="slider-contnent">
-          <div className="slider-img">
-            {sliderItems.map((item, index) => (
-                <img
-                  key={index}
-                  src={item}
-                  alt={`slider-img-${index}`}
-                  className={index === sliderItem ? "active" : "inactive"}
-                />
-              ))}
+          <div className="slider-imgs" 
+          style={{transform: `translateX(${sliderItem * - 100}%)`}}>
+            <img 
+              className='slider-img' 
+              src={sliderItems[0]} 
+              alt="slider img" />
+            <img 
+              className='slider-img' 
+              src={sliderItems[1]} 
+              alt="slider img" />
+            <img 
+              className='slider-img' 
+              src={sliderItems[2]} 
+              alt="slider img" />
           </div>
-          <button 
-            className="slider-btn"
+        </div>
+      </div>
+      <button 
+            className="slider-btn slider-btn__prev"
             onClick={prevSlide}
             >
             
           </button>
           <button 
-            className="slider-btn"
+            className="slider-btn slider-btn__next"
             onClick={nextSlide}
             >
 
           </button>
-        </div>
-      </div>
     </div>
   )
 }

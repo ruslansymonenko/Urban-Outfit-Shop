@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
+import {Slider} from '../components/Slider'
+
 const MainPage = () => {
   const [goods, setGoods] = useState([]);
 
@@ -10,7 +12,6 @@ const MainPage = () => {
         const response = await axios.get('http://localhost:3001/api/goods');
         console.log('Data received!');
         setGoods(response.data);
-        console.log(goods)
       } catch (error) {
         console.log(error);
       }
@@ -20,7 +21,9 @@ const MainPage = () => {
   }, []);
 
   return(
-    <section className="main">Main</section>
+    <section className="main">
+      <Slider/>
+    </section>
   )
 }
 

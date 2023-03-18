@@ -104,3 +104,46 @@ body{
 .header-nav__list-link:hover{
   color: var(--orange);
 }
+
+
+/*-------------Slider*/
+
+.slider{
+  position: relative;
+}
+
+.slider-contnent{
+  height: 500px;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  margin-top: 40px;
+  border-radius: 10px;
+}
+
+.slider-imgs{
+  display: flex;
+  transition: ease .6s;
+}
+
+.slider-img{
+  filter: brightness(60%);
+}
+
+.slider-btn{
+  position: absolute;
+  height: 40px;
+  width: 40px;
+  border: none;
+  border-radius: 50%;
+  background-color: var(--orange);
+  cursor: pointer;
+  top: 50%;
+}
+
+.slider-btn__prev{
+  left: 3%;
+}
+
+.slider-btn__next{
+  right: 3%;
+}
