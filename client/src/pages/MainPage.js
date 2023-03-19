@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
-import {Slider} from '../components/Slider'
+import {Slider} from '../components/Slider';
+import { GoodsField } from '../components/GoodsField';
 
 const MainPage = () => {
   const [goods, setGoods] = useState([]);
@@ -23,6 +24,9 @@ const MainPage = () => {
   return(
     <section className="main">
       <Slider/>
+      {
+        goods.length > 0 ? <GoodsField goods={goods}/> : ''
+      }
     </section>
   )
 }
