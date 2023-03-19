@@ -1,6 +1,10 @@
+import { Slider } from "../components/Slider"
+
 const AboutPage = () => {
   return(
-    <section className="about">About</section>
+    <section className="about">
+      <Slider/>
+    </section>
   )
 }
 

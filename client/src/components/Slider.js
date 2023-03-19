@@ -3,6 +3,8 @@ import { useState } from 'react';
 import sliderImg1 from '../assets/images/slider/slider-1.jpg';
 import sliderImg2 from '../assets/images/slider/slider-2.jpg';
 import sliderImg3 from '../assets/images/slider/slider-3.jpg';
+import arrowLeft from '../assets/icons/arrow-left.svg';
+import arrowRight from '../assets/icons/arrow-right.svg';
 
 const Slider = () => {
   const [sliderItem, setSliderItem] = useState(0);
@@ -47,17 +49,17 @@ const Slider = () => {
         </div>
       </div>
       <button 
-            className="slider-btn slider-btn__prev"
-            onClick={prevSlide}
-            >
-            
-          </button>
-          <button 
-            className="slider-btn slider-btn__next"
-            onClick={nextSlide}
-            >
-
-          </button>
+        className="slider-btn slider-btn__prev"
+        onClick={prevSlide}
+        >
+        <img className='slider-btn__arrow' src={arrowLeft} alt="" />
+      </button>
+      <button 
+        className="slider-btn slider-btn__next"
+        onClick={nextSlide}
+        >
+        <img className='slider-btn__arrow' src={arrowRight} alt="" />
+      </button>
     </div>
   )
 }
