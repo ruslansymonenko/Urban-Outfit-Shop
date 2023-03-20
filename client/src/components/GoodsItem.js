@@ -1,12 +1,22 @@
 import React, { useState } from 'react';
 
-function GoodsItem ({name, price, imgURL}) {
+function GoodsItem ({title, price, imgURL}) {
 
   return(
-    <div>
-      <p>{name}</p>
-      <p className='text-blue-400 text-xs'>{price}</p>
-      <img src={`http://localhost:3001/goods/${imgURL}`} alt={name} />
+    <div className='goods-card'>
+      <h4 className='goods-card__title'>
+        New Balance 725 Radically classic 
+      </h4>
+      <img 
+        className='goods-card__img' 
+        // src={`http://localhost:3001/goods/${imgURL}`} 
+        alt={title} />
+      <span className='goods-card__brand'>
+        Jordan
+      </span>
+      <span className='goods-card__price'>
+        100$
+      </span>
     </div>
   )
 }
