@@ -1,7 +1,31 @@
-import React from 'react';
+import React, {useState} from 'react';
+import axios from 'axios';
 import { Link } from 'react-router-dom';
 
 const RegisterPage = () => {
+  const [form, setForm] = useState({
+    email: '',
+    password: ''
+  })
+
+  const inputHandler = (event) => {
+    setForm({
+      ...form,
+      [event.target.name]: event.target.value
+    });
+  }
+
+  const submitForm = async (event) => {
+    try{
+      await axios.post('http://localhost:3001/api/auth/registration', {...form})
+      .then(response => console.log(response));
+
+    } catch (err) {
+      console.log(err)
+    }
+  }
+
+
   return (
     <div className='registration'>
       <div className="container">
@@ -22,7 +46,9 @@ const RegisterPage = () => {
                 className='auth-form__input'
                 type="emai" 
                 placeholder='E-mail' 
-                name='email'/>
+                name='email'
+                onChange={inputHandler}
+                />
             </div>
             <div className="auth-form__input-container">
               <label 
@@ -33,9 +59,13 @@ const RegisterPage = () => {
                 className='auth-form__input'
                 type="password" 
                 placeholder='Password' 
-                name='password'/>
+                name='password'
+                onChange={inputHandler}
+                />
             </div>
-            <button className='auth-form__submit'>
+            <button 
+              className='auth-form__submit'
+              onClick={submitForm}>
               Submit
             </button>
             <Link 
