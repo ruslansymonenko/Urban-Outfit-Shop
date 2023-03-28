@@ -33,6 +33,9 @@ const Slider = () => {
     <div className="slider">
       <div className="container">
         <div className="slider-contnent">
+          <h3 className="slider-content__title">
+            Discover the most popular clothes and shoes from world-renowned brands at our online store
+          </h3>
           <div className="slider-imgs" 
           style={{transform: `translateX(${sliderItem * - 100}%)`}}>
             <img 

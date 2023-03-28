@@ -3,11 +3,24 @@
 }
 
 .slider-contnent{
+  position: relative;
   height: 500px;
   overflow-y: hidden;
   overflow-x: hidden;
-  margin-top: 40px;
   border-radius: 10px;
+}
+
+.slider-content__title{
+  text-align: center;
+  font-size: 30px;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+  color: var(--main-white);
+  position: absolute;
+  z-index: 10;
+  opacity: 0.8;
 }
 
 .slider-imgs{
