@@ -1,5 +1,7 @@
-import socialInsta from '../assets/icons/instagram.svg';
-import socialTelgram from '../assets/icons/telegram.svg';
+import socialInsta from '../../assets/icons/instagram.svg';
+import socialTelgram from '../../assets/icons/telegram.svg';
+
+import './Footer.css';
 
 const Footer = () => {
   return(

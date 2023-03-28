@@ -1,4 +1,6 @@
-import { Slider } from "../components/Slider"
+import { Slider } from "../../components/Slider/Slider";
+
+import './AboutPage.css';
 
 const AboutPage = () => {
   return(

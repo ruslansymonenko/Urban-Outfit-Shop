@@ -1,6 +1,8 @@
 import { useState } from "react";
-import { GoodsFilter } from "./GoodsFilter";
-import { GoodsList } from "./GoodsList";
+import { GoodsFilter } from "../GoodsFilter/GoodsFilter";
+import { GoodsList } from "../GoodsList/GoodsList";
+
+import './GoodsField.css';
 
 const GoodsField = ({goods}) => {
   const [goodsData, setGoodsData] = useState([goods]);

@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
-import { GoodsItem } from './GoodsItem';
+import { GoodsItem } from '../GoodsItem/GoodsItem';
 
-import testImage from '../assets/test-image.jpg';
+import './GoodsList.css';
+
+import testImage from '../../assets/test-image.jpg';
 
 const GoodsList = ({goods}) => {
   const [goodsData, setGoodsData] = useState(goods);

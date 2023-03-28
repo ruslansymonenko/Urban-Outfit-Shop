@@ -2,12 +2,12 @@ import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 
 
-import { MainPage } from './pages/MainPage';
-import { AboutPage } from './pages/AboutPage';
-import { ContactPage } from './pages/ContactPage';
-import { NotFoundPage } from './pages/NotFoundPage';
-import { LoginPage } from './pages/LoginPage';
-import { RegisterPage } from './pages/RegisterPage';
+import { MainPage } from './pages/MainPage/MainPage';
+import { AboutPage } from './pages/AboutPage/AboutPage';
+import { ContactPage } from './pages/ContactPage/ContactPage';
+import { NotFoundPage } from './pages/NotFoundPage/NotFoundPage';
+import { LoginPage } from './pages/LoginPage/LoginPage';
+import { RegisterPage } from './pages/RegisterPage/RegisterPage';
 
 import { Layout } from './components/Layout';
 

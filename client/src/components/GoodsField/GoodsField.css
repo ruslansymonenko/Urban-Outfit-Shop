@@ -1,0 +1,9 @@
+.goods{
+  display: flex;
+  padding: 80px 0px 80px;
+}
+
+.goods-content{
+  display: flex;
+  min-height: 600px;
+}

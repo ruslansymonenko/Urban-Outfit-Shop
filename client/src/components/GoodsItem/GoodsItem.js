@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 
+import './GoodsItem.css';
+
 function GoodsItem ({title, price, imgURL}) {
 
   return(

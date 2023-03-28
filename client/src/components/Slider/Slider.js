@@ -1,10 +1,12 @@
 import { useState } from 'react';
 
-import sliderImg1 from '../assets/images/slider/slider-1.jpg';
-import sliderImg2 from '../assets/images/slider/slider-2.jpg';
-import sliderImg3 from '../assets/images/slider/slider-3.jpg';
-import arrowLeft from '../assets/icons/arrow-left.svg';
-import arrowRight from '../assets/icons/arrow-right.svg';
+import './Slider.css';
+
+import sliderImg1 from '../../assets/images/slider/slider-1.jpg';
+import sliderImg2 from '../../assets/images/slider/slider-2.jpg';
+import sliderImg3 from '../../assets/images/slider/slider-3.jpg';
+import arrowLeft from '../../assets/icons/arrow-left.svg';
+import arrowRight from '../../assets/icons/arrow-right.svg';
 
 const Slider = () => {
   const [sliderItem, setSliderItem] = useState(0);

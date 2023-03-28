@@ -1,4 +1,7 @@
-import searchImg from '../assets/icons/search.svg'
+import './GoodsFilter.css';
+
+import searchImg from '../../assets/icons/search.svg';
+
 
 const GoodsFilter = () => {
   return(

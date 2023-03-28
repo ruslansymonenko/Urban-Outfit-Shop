@@ -1,4 +1,4 @@
-import { Slider } from "../components/Slider"
+import './ContactPage.css';
 
 const ContactPage = () => {
   return(

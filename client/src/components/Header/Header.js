@@ -1,7 +1,9 @@
 import { Link } from "react-router-dom";
 
-import accountImg from '../assets/icons/account.svg';
-import cartImg from '../assets/icons/cart.svg';
+import accountImg from '../../assets/icons/account.svg';
+import cartImg from '../../assets/icons/cart.svg';
+
+import './Header.css';
 
 const Header = () => {
   return (

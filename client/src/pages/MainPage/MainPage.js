@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
-import {Slider} from '../components/Slider';
-import { GoodsField } from '../components/GoodsField';
+import {Slider} from '../../components/Slider/Slider';
+import { GoodsField } from '../../components/GoodsField/GoodsField';
+
+import './MainPage.css';
 
 const MainPage = () => {
   const [goods, setGoods] = useState([]);
