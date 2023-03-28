@@ -3,21 +3,9 @@ import { GoodsFilter } from "./GoodsFilter";
 import { GoodsList } from "./GoodsList";
 
 const GoodsField = ({goods}) => {
-  const [goodsData, setGoodsData] = useState([]);
+  const [goodsData, setGoodsData] = useState([goods]);
 
-  function setAllGoods () {
-    let allGoods = goods.map((item, index) => {
-      let goodsObj = {...item};
-      console.log(goodsObj);
-      return goodsObj
-    })
-
-    // console.log(allGoods);
-  }
-
-  if(goods) {
-    setAllGoods();
-  }
+  console.log(goodsData)
 
   return (
     <section className="goods">

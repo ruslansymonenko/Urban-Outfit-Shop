@@ -5,7 +5,9 @@ import { Route, Routes } from 'react-router-dom';
 import { MainPage } from './pages/MainPage';
 import { AboutPage } from './pages/AboutPage';
 import { ContactPage } from './pages/ContactPage';
-import {NotFoundPage} from './pages/NotFoundPage';
+import { NotFoundPage } from './pages/NotFoundPage';
+import { LoginPage } from './pages/LoginPage';
+import { RegisterPage } from './pages/RegisterPage';
 
 import { Layout } from './components/Layout';
 
@@ -30,6 +32,8 @@ function App() {
           <Route index path='/' element={<MainPage/>}/>
           <Route path='about' element={<AboutPage/>}/>
           <Route path='contact' element={<ContactPage/>}/>
+          <Route path='login' element={<LoginPage/>}/>
+          <Route path='registration' element={<RegisterPage/>}/>
           <Route path='*' element={<NotFoundPage/>}/>
         </Route>
       </Routes>

@@ -105,6 +105,29 @@ body{
   color: var(--orange);
 }
 
+.header-user{
+  display: flex;
+  display: flex;
+  align-items: center;
+}
+
+.header-login{
+  cursor: pointer;
+  border-radius: 50%;
+  height: 45px;
+  width: 45px;
+}
+
+
+.header-cart{
+  height: 40px;
+  width: 40px;
+  cursor: pointer;
+  border-radius: 50%;
+  margin-left: 20px;
+}
+
+
 
 /*-------------Slider*/
 
@@ -282,6 +305,76 @@ body{
 
 .filter-options__price-range{
   accent-color: var(--orange);
+}
+
+
+/*----------------------------Auth*/
+
+.auth-content{
+  min-height: calc(100vh - 230px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.auth-form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  padding: 10px;
+  height: 450px;
+  width: 650px;
+  border-radius: 3px;
+  box-shadow: 0px 0px 5px -1px var(--dark-gray);
+}
+
+.auth-form__input-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.auth-form__input-name{
+  margin-bottom: 10px;
+}
+
+.auth-form__input{
+  padding: 5px;
+  width: 300px;
+  font-family: inherit;
+  border-radius: 3px;
+  border: none;
+  box-shadow: 0px 0px 5px -1px var(--dark-gray);
+}
+
+.auth-form__input:focus{
+  outline: none;
+}
+
+.auth-form__submit{
+  height: 40px;
+  width: 100px;
+  background-color: var(--orange);
+  border: none;
+  border-radius: 3px;
+  font-weight: 600;
+  color: var(--main-white);
+  box-shadow: 0px 3px 5px -1px var(--dark-gray);
+  cursor: pointer;
+  transition: ease .1s;
+}
+.auth-form__submit:active{
+  transform: translateY(5px);
+  box-shadow: 0px 1px 5px -1px var(--dark-gray);
+}
+
+.auth-form__link{
+  transition: ease .4s;
+}
+
+.auth-form__link:hover{
+  color: var(--orange);
 }
 
 
