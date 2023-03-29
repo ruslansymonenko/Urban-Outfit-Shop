@@ -7,6 +7,8 @@ import creativityImg from '../../assets/images/aboutPageImgs/stories/creativity.
 import styleImg from '../../assets/images/aboutPageImgs/stories/style.jpg';
 import changeImg from '../../assets/images/aboutPageImgs/stories/change.jpg';
 
+import startImg from '../../assets/icons/star.svg';
+
 const AboutPage = () => {
   const [progress, setProgress] = useState(1);
   const [storyBar, setStoryBar] = useState(10);
@@ -20,6 +22,12 @@ const AboutPage = () => {
     {title: '2019', text: 'Urban Outfit is recognized as one of the top online clothing and shoe stores, thanks to our commitment to quality, style, and exceptional customer service.', img: styleImg},
     {title: '2023', text: 'We continue to innovate and expand, with new product lines, exclusive collections, and a growing community of loyal customers who share our passion for fashion.', img: changeImg},
   ];
+  const reviews = [
+    {user: 'Alex', grade: 5, review: 'Very cool store, I\'ve been shopping here for many years'},
+    {user: 'Sara', grade: 4, review: 'I like their assortment, but I their like fast delivery'},
+    {user: 'Garry', grade: 4.5, review: 'Good product, friendly staff'}
+  ]
+
 
   const handleProgressBar = (value) => {
     switch(value) {
@@ -112,20 +120,35 @@ const AboutPage = () => {
                       )
                     })
                   }
-                  {/* <div className="about-story__stories-item">
-                    <h3
-                      className='about-story__stories-title'>
-                      2010
-                    </h3>
-                    <div className="about-story__stories-content">
-                      <p className='about-story__stories-text'>
-                        Urban Outfit is founded with a mission to offer the best clothing and shoe options for people who want to express themselves with unique styles.
-                      </p>
-                      <img className='about-story__stories-img' src={openImg} alt="storiesImg" />
-                    </div>
-                  </div> */}
                 </div>
-              </div>
+            </div>
+          </div>
+          <div className="about-reviews">
+            <h2 className='about-reviews__title'>
+              Let's read what our clients say about us
+            </h2>
+            <div className="about-reviews__items">
+              {
+                reviews.map(review => {
+                  return(
+                    <div className="about-reviews__item">
+                      <h4 className="about-reviews__item-user">
+                        {review.user}
+                      </h4>
+                      <div className="about-reviews__item-grade">
+                        <span>
+                          {review.grade}
+                        </span>
+                        <img src={startImg} alt="star"/>
+                      </div>
+                      <p className="about-reviews__item-text">
+                        {review.review}
+                      </p>
+                    </div>
+                  )
+                })
+              }
+            </div>
           </div>
         </div>
       </div>
