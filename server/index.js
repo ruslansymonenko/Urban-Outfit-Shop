@@ -4,7 +4,7 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 
 import goodsRoute from './routes/goods.js';
-import registrationRoute from './routes/register.route.js'
+import authRoute from './routes/auth.route.js'
 
 const app = express();
 const PORT = 3001;
@@ -21,7 +21,7 @@ app.use(express.static('uploads'));
 
 //Routes
 app.use('/api/goods', goodsRoute);
-app.use('/api/auth/', registrationRoute);
+app.use('/api/auth/', authRoute);
 
 async function start () {
   try{

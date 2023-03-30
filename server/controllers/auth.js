@@ -1,9 +1,8 @@
-import { Router } from "express";
 import User from '../models/User.js';
 
-const router = new Router();
+//Registration
 
-router.post('/registration', async(req, res) => {
+export const register = async(req, res) => {
   try{
     const {email, password} = req.body;
 
@@ -22,6 +21,4 @@ router.post('/registration', async(req, res) => {
   } catch(err) {
     console.log(err);
   }
-});
-
-export default router;
+};
