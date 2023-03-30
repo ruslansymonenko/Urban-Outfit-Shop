@@ -52,6 +52,10 @@ a {
   color: inherit;
 }
 
+address{
+  font-style: normal;
+}
+
 :root{
   --main-white: #FFFFFF;
   --light-gray: #BFC0C0;
