@@ -22,6 +22,7 @@ const LoginPage = () => {
       await axios.post('http://localhost:3001/api/auth/login', {...form})
       .then(response => {
         console.log(response);
+        
         setForm({
           email: '',
           password: ''
