@@ -2,13 +2,20 @@ import React, {useState} from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 
+import AlertMessage from '../../components/AlertMessage/AlertMessage';
+
 import './RegisterPage.css';
 
 const RegisterPage = () => {
   const [form, setForm] = useState({
     email: '',
     password: ''
-  })
+  });
+  
+  const [resultMessage, setResultMessage] = useState({
+    message: 'Server response',
+    visibility: false
+  });
 
   const inputHandler = (event) => {
     setForm({
@@ -20,11 +27,36 @@ const RegisterPage = () => {
   const submitForm = async (event) => {
     try{
       await axios.post('http://localhost:3001/api/auth/registration', {...form})
-      .then(response => console.log(response));
+      .then(response => {
+        console.log(response.data.message);
+        showServerResponse(response.data.message);
 
+        setInterval(hideServerResponse, 2500);
+
+        setForm({
+          email: '',
+          password: ''
+        });
+      });
     } catch (err) {
-      console.log(err)
+      console.log(err);
+      showServerResponse(err.response.data.message);
+      setInterval(hideServerResponse, 2500);
     }
+  }
+
+  const showServerResponse = (text) => {
+    setResultMessage({
+      message: text,
+      visibility: true
+    })
+  }
+
+  const hideServerResponse = () => {
+    setResultMessage({
+      message: 'Server response',
+      visibility: false
+    })
   }
 
 
@@ -49,6 +81,7 @@ const RegisterPage = () => {
                 type="emai" 
                 placeholder='E-mail' 
                 name='email'
+                value={form.email}
                 onChange={inputHandler}
                 />
             </div>
@@ -62,6 +95,7 @@ const RegisterPage = () => {
                 type="password" 
                 placeholder='Password' 
                 name='password'
+                value={form.password}
                 onChange={inputHandler}
                 />
             </div>
@@ -78,6 +112,10 @@ const RegisterPage = () => {
           </form>
         </div>
       </div>
+      <AlertMessage
+        message={resultMessage.message}
+        isActive={resultMessage.visibility}
+      />
     </div>
   )
 }

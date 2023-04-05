@@ -1,9 +1,37 @@
-import React from 'react';
+import React, {useState} from 'react';
+import axios from 'axios';
 import { Link } from 'react-router-dom';
 
 import './LoginPage.css';
 
 const LoginPage = () => {
+  const [form, setForm] = useState({
+    email: '',
+    password: ''
+  })
+
+  const inputHandler = (event) => {
+    setForm({
+      ...form,
+      [event.target.name]: event.target.value
+    });
+  }
+
+  const submitForm = async (event) => {
+    try{
+      await axios.post('http://localhost:3001/api/auth/login', {...form})
+      .then(response => {
+        console.log(response);
+        setForm({
+          email: '',
+          password: ''
+        });
+      });
+    } catch (err) {
+      console.log(err)
+    }
+  }
+
   return (
     <div className='login'>
       <div className="container">
@@ -24,7 +52,10 @@ const LoginPage = () => {
                 className='auth-form__input'
                 type="emai" 
                 placeholder='E-mail' 
-                name='email'/>
+                name='email'
+                value={form.email}
+                onChange={inputHandler}
+                />
             </div>
             <div className="auth-form__input-container">
               <label 
@@ -35,9 +66,15 @@ const LoginPage = () => {
                 className='auth-form__input'
                 type="password" 
                 placeholder='Password' 
-                name='password'/>
+                name='password'
+                value={form.password}
+                onChange={inputHandler}
+                />
             </div>
-            <button className='auth-form__submit'>
+            <button 
+              className='auth-form__submit'
+              onClick={submitForm}
+              >
               Submit
             </button>
             <Link 
